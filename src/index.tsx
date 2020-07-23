@@ -16,7 +16,7 @@ const enhancer = composeEnhancers(applyMiddleware(thunk));
 const store = createStore(reducers, enhancer);
 
 if (process.env.MOCK === "true") {
-  require("./mock");
+  import("./mock");
 }
 
 const App = () => {

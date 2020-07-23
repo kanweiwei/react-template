@@ -1,14 +1,14 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import getCode from "@/utils/getCode";
 
-import { NoteRes, ApiRes } from "@/services/dto";
+import { ApiRes } from "@/services/dto";
 import Cookie from "js-cookie";
 
 const baseOptions = {
   baseURL:
     process.env.PROXY === "true" || process.env.MOCK === "true"
       ? ""
-      : "http://116.62.165.39",
+      : process.env.API_HOST,
   timeout: 30000,
 };
 
