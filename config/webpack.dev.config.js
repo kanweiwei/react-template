@@ -41,6 +41,17 @@ module.exports = {
           loaders.fileLoader,
         ],
       },
+      {
+        enforce: "pre",
+        test: /\.(js|jsx|ts|tsx|mjs)$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {
+          fix: true,
+          emitWarning: true,
+          emitError: true,
+        },
+      },
     ],
   },
   plugins: [

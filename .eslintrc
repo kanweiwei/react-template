@@ -1,0 +1,14 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["import"],
+  "extends": ["plugin:react-hooks/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": { "jsx": true, "modules": true },
+    "project": "./tsconfig.json",
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"]
+  },
+  "rules": {
+    "@typescript-eslint/rule-name": "error"
+  }
+}
