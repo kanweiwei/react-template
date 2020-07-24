@@ -1,22 +1,23 @@
 import * as React from "react";
 
 import * as ReactDom from "react-dom";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./reducers";
 import thunk from "redux-thunk";
 import RouteApp from "./routeApp";
 import "./style.less";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const composeEnhancers =
-  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+declare const window: Window & {
+  __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
+};
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancer = composeEnhancers(applyMiddleware(thunk));
 
 const store = createStore(reducers, enhancer);
 
 if (process.env.MOCK === "true") {
-  import("./mock");
+  require("./mock");
 }
 
 const App = () => {

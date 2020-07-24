@@ -1,4 +1,4 @@
-const mockjs = require("mockjs");
+import mockjs from "mockjs";
 
 const requireAll = (requireContext) =>
   requireContext
@@ -8,7 +8,6 @@ const requireAll = (requireContext) =>
       const obj = n.default;
       for (const key in obj) {
         const r = key.split(/\s+/);
-        console.log(r);
         if (r) {
           if (r.length === 2) {
             const [method, url] = r;
@@ -23,5 +22,6 @@ const requireAll = (requireContext) =>
         }
       }
     });
+// eslint-disable-next-line no-undef
 const req = require.context("./mock", true, /\.ts$/);
 requireAll(req);

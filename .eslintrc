@@ -1,14 +1,23 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["import"],
-  "extends": ["plugin:react-hooks/recommended"],
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": { "jsx": true, "modules": true },
-    "project": "./tsconfig.json",
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"]
+    "project": "./tsconfig.json"
   },
   "rules": {
-    "@typescript-eslint/rule-name": "error"
+    "react/display-name": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/no-explicit-any": 0
   }
 }

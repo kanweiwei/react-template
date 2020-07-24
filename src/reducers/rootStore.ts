@@ -1,6 +1,10 @@
-const initState = {};
+type RootState = {
+  [propName: string]: unknown;
+};
 
-export default (state = initState, action) => {
+const initState: RootState = {};
+
+export default (state = initState, action: { type: unknown }): unknown => {
   switch (action.type) {
     default:
       //
