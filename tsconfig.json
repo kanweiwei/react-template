@@ -18,7 +18,7 @@
     "noUnusedLocals": false,
     "removeComments": true,
     "jsx": "react",
-    "types": ["react"],
+    "types": ["react", "node"],
     "noImplicitAny": true,
     "outDir": "./build/",
     "preserveConstEnums": true,
